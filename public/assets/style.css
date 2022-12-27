@@ -17,6 +17,7 @@ body {
   height: 100vh;
   font-size: 0;
 }
+
 .slot {
   display: inline-block;
   color: white;
@@ -39,6 +40,13 @@ body {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+#btn {
+  font-size: 8rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @keyframes slide {

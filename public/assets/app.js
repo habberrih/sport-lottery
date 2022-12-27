@@ -52,9 +52,9 @@ var numberSpin = function (selector) {
 };
 
 function onClick() {
-  numberSpin("scroll1").stop(3000 + 100 + Math.floor(Math.random() * 100), 1);
-  numberSpin("scroll2").stop(3000 + 200 + Math.floor(Math.random() * 100), 2);
-  numberSpin("scroll3").stop(3000 + 300 + Math.floor(Math.random() * 100), 5);
+  numberSpin("scroll1").stop(5000, Math.floor(Math.random() * 2 + 1));
+  numberSpin("scroll2").stop(6000, Math.floor(Math.random() * 6));
+  numberSpin("scroll3").stop(7000, Math.floor(Math.random() * 10));
 }
 
 let btn = document.querySelector("#btn");
