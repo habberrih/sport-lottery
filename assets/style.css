@@ -19,7 +19,7 @@ body {
 }
 
 .slot {
-  display: inline-block;
+  visibility: hidden;
   color: white;
   opacity: 0;
   width: 70px;
@@ -31,6 +31,10 @@ body {
   overflow: hidden;
   animation: slide 1s forwards;
   animation-delay: 0.5s;
+}
+
+.visible {
+  display: inline;
 }
 
 #myVideo {

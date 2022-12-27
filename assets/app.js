@@ -51,11 +51,16 @@ var numberSpin = function (selector) {
   };
 };
 
-function onClick() {
-  numberSpin("scroll1").stop(5000, Math.floor(Math.random() * 2 + 1));
-  numberSpin("scroll2").stop(6000, Math.floor(Math.random() * 6));
-  numberSpin("scroll3").stop(7000, Math.floor(Math.random() * 10));
-}
-
+let slots = [...document.querySelectorAll(".slot")];
 let btn = document.querySelector("#btn");
-btn.addEventListener("click", onClick);
+btn.addEventListener("click", () => {
+  if (slots[0].classList.contains("visible")) {
+    numberSpin("scroll1").stop(5000, Math.floor(Math.random() * 2 + 1));
+    numberSpin("scroll2").stop(6000, Math.floor(Math.random() * 6));
+    numberSpin("scroll3").stop(7000, Math.floor(Math.random() * 10));
+  } else {
+    slots.map((slot) => {
+      slot.classList.add("visible");
+    });
+  }
+});
