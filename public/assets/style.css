@@ -19,7 +19,7 @@ body {
 }
 
 .slot {
-  visibility: hidden;
+  display: none;
   color: white;
   opacity: 0;
   width: 70px;
@@ -34,7 +34,7 @@ body {
 }
 
 .visible {
-  display: inline;
+  display: inline-block;
 }
 
 #myVideo {
