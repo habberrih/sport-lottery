@@ -6,69 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/fireworks.css" />
   </head>
   <body>
-    <!-- The video -->
-    <video autoplay muted loop id="myVideo">
-      <source src="assets/video/background.mp4" type="video/mp4" />
-    </video>
     <header>
       <div class="header">
         <h1>Hour of Code 2022</h1>
         <h3>Closing Cermoney</h3>
+        <img
+          src="assets/images/mouse.png"
+          id="mouse_logo"
+          alt="mouse scroll logo"
+        />
       </div>
     </header>
-    <div class="slotcontainer">
-      <div>
-        <div class="slot">
-          <div id="scroll1">
-            <div>0</div>
-            <div>1</div>
-            <div>2</div>
-            <div>1</div>
-            <div>2</div>
-            <div>1</div>
-            <div>2</div>
-            <div>1</div>
-            <div>2</div>
-            <div>1</div>
-            <div>0</div>
-          </div>
-        </div>
-        <div class="slot">
-          <div id="scroll2">
-            <div>0</div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>0</div>
-          </div>
-        </div>
-        <div class="slot">
-          <div id="scroll3">
-            <div>0</div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>0</div>
-          </div>
-        </div>
-      </div>
 
-      <button id="btn">🚀</button>
-    </div>
+    <main>
+      <!-- The video -->
+      <video autoplay muted loop id="myVideo">
+        <source src="assets/video/background.mp4" type="video/mp4" />
+      </video>
+
+      <div class="firework"></div>
+      <div class="firework"></div>
+      <div class="firework"></div>
+
+      <div class="slotcontainer">
+        <div>
+          <div class="slot">
+            <div id="scroll1">
+              <div>0</div>
+              <div>1</div>
+              <div>2</div>
+              <div>1</div>
+              <div>2</div>
+              <div>1</div>
+              <div>2</div>
+              <div>1</div>
+              <div>2</div>
+              <div>1</div>
+              <div>0</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div id="scroll2">
+              <div>0</div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>0</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div id="scroll3">
+              <div>0</div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>0</div>
+            </div>
+          </div>
+        </div>
+
+        <button id="btn">🚀</button>
+      </div>
+    </main>
 
     <script src="./assets/app.js"></script>
   </body>
