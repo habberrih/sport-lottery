@@ -153,3 +153,33 @@
   top: 50%;
   animation-delay: -0.4s;
 }
+
+.firework:nth-child(4),
+.firework:nth-child(4)::before,
+.firework:nth-child(4)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 60vmin;
+  left: 80%;
+  top: 50%;
+  animation-delay: -0.4s;
+}
+
+.firework:nth-child(5),
+.firework:nth-child(5)::before,
+.firework:nth-child(5)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 60vmin;
+  left: 20%;
+  top: 50%;
+  animation-delay: -0.4s;
+}
