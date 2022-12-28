@@ -74,7 +74,7 @@ btn.addEventListener("click", () => {
     setTimeout(() => {
       fireworkPlaceholder.map((item) => item.classList.add("firework"));
       lucky.textContent = "🥳🎉CONGRATULATIONS🎉🥳";
-    }, 8000);
+    }, 8100);
   } else {
     lucky.style.display = "block";
     slots.map((slot) => {
