@@ -58,7 +58,7 @@ footer {
   width: 30px;
 }
 
-#gold {
+.gold {
   background-image: linear-gradient(
     to right,
     #cb9b51 0,

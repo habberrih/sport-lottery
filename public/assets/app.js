@@ -54,6 +54,8 @@ var numberSpin = function (selector) {
 let header = document.querySelector("header");
 let main = document.querySelector("main");
 let mouseLogo = document.querySelector("#mouse_logo");
+let drumRoll = document.querySelector("#drum_roll");
+let cheer = document.querySelector("#cheer");
 let fireworkPlaceholder = [...document.querySelectorAll(".placeholder")];
 let lucky = document.querySelector("#lucky");
 let slots = [...document.querySelectorAll(".slot")];
@@ -61,6 +63,7 @@ let btn = document.querySelector("#btn");
 
 btn.addEventListener("click", () => {
   if (slots[0].classList.contains("visible")) {
+    drumRoll.play();
     lucky.textContent = "The lucky number is...";
     fireworkPlaceholder.map((item) => item.classList.remove("firework"));
     firstNumber = Math.floor(Math.random() * 2 + 1);
@@ -74,6 +77,8 @@ btn.addEventListener("click", () => {
     setTimeout(() => {
       fireworkPlaceholder.map((item) => item.classList.add("firework"));
       lucky.textContent = "🥳🎉CONGRATULATIONS🎉🥳";
+      drumRoll.pause();
+      cheer.play();
     }, 8100);
   } else {
     lucky.style.opacity = 1;
