@@ -30,13 +30,14 @@ footer {
   width: 100vw;
   background: #334155;
   text-align: center;
+  padding: 0 10px;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .organizers {
@@ -53,6 +54,10 @@ footer {
   margin-left: 5px;
 }
 
+.social_media_links > img {
+  width: 30px;
+}
+
 #gold {
   background-image: linear-gradient(
     to right,
@@ -66,6 +71,7 @@ footer {
   );
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 #mouse_logo {
@@ -95,7 +101,7 @@ footer {
 }
 
 .slot {
-  display: none;
+  display: inline-block;
   opacity: 0;
   width: 70px;
   height: 100px;
@@ -104,12 +110,13 @@ footer {
   font-family: verdana;
   line-height: 100px;
   overflow: hidden;
-  animation: slide 1s forwards;
-  animation-delay: 0.5s;
+  transition: opacity 1s ease-in;
+  /* animation: slide 1s forwards;
+  animation-delay: 0.5s; */
 }
 
 .visible {
-  display: inline-block !important;
+  opacity: 1;
 }
 
 #myVideo {
@@ -122,9 +129,10 @@ footer {
 }
 
 #lucky {
-  display: none;
-  transition: all 0.5s ease-in;
+  display: block;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
 }
 
 #btn {

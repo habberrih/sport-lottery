@@ -76,7 +76,7 @@ btn.addEventListener("click", () => {
       lucky.textContent = "🥳🎉CONGRATULATIONS🎉🥳";
     }, 8100);
   } else {
-    lucky.style.display = "block";
+    lucky.style.opacity = 1;
     slots.map((slot) => {
       slot.classList.add("visible");
     });
