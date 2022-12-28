@@ -6,12 +6,15 @@ body {
   margin: 0;
 }
 
+body {
+  background: #334155;
+}
+
 main {
   position: relative;
 }
 
 .header {
-  background: #334155;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -60,7 +63,7 @@ main {
 }
 
 #myVideo {
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
   min-width: 100%;

@@ -54,6 +54,7 @@ var numberSpin = function (selector) {
 let header = document.querySelector("header");
 let main = document.querySelector("main");
 let mouseLogo = document.querySelector("#mouse_logo");
+let fireworkPlaceholder = [...document.querySelectorAll(".placeholder")];
 let slots = [...document.querySelectorAll(".slot")];
 let btn = document.querySelector("#btn");
 
@@ -66,6 +67,10 @@ btn.addEventListener("click", () => {
     numberSpin("scroll1").stop(5000, firstNumber);
     numberSpin("scroll2").stop(6000, secondNumber);
     numberSpin("scroll3").stop(7000, thirdNumber);
+
+    setTimeout(() => {
+      fireworkPlaceholder.map((item) => item.classList.add("firework"));
+    }, 9000);
   } else {
     slots.map((slot) => {
       slot.classList.add("visible");
