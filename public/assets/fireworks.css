@@ -24,7 +24,7 @@
 .firework::before,
 .firework::after {
   --initialSize: 0.5vmin;
-  --finalSize: 60vmin;
+  --finalSize: 100vmin;
   --particleSize: 0.2vmin;
   --color1: yellow;
   --color2: khaki;
@@ -128,7 +128,7 @@
   --color4: orchid;
   --color5: plum;
   --color6: lavender;
-  --finalSize: 60vmin;
+  --finalSize: 100vmin;
   left: 40%;
   top: 50%;
   animation-delay: -0.25s;
@@ -148,7 +148,7 @@
   --color4: PaleTurquoise;
   --color5: SkyBlue;
   --color6: lavender;
-  --finalSize: 60vmin;
+  --finalSize: 100vmin;
   left: 60%;
   top: 50%;
   animation-delay: -0.4s;
@@ -163,7 +163,7 @@
   --color4: PaleTurquoise;
   --color5: SkyBlue;
   --color6: lavender;
-  --finalSize: 60vmin;
+  --finalSize: 100vmin;
   left: 80%;
   top: 50%;
   animation-delay: -0.4s;
@@ -178,7 +178,7 @@
   --color4: PaleTurquoise;
   --color5: SkyBlue;
   --color6: lavender;
-  --finalSize: 60vmin;
+  --finalSize: 100vmin;
   left: 20%;
   top: 50%;
   animation-delay: -0.4s;
