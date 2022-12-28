@@ -59,9 +59,6 @@ btn.addEventListener('click', () => {
     secondNumber = Math.floor(Math.random() * 6);
     thirdNumber = Math.floor(Math.random() * 10);
 
-    if (secondNumber === 6) {
-      thirdNumber = 0;
-    }
     numberSpin('scroll1').stop(5000, firstNumber);
     numberSpin('scroll2').stop(6000, secondNumber);
     numberSpin('scroll3').stop(7000, thirdNumber);
