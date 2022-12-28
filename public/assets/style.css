@@ -8,6 +8,7 @@ body {
 
 body {
   background: #334155;
+  color: #fff;
 }
 
 main {
@@ -18,7 +19,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -31,6 +31,14 @@ main {
   cursor: pointer;
 }
 
+.container {
+  display: "flex";
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .slotcontainer {
   display: flex;
   flex-direction: column;
@@ -40,12 +48,10 @@ main {
   text-align: center;
   width: 100vw;
   height: 100vh;
-  font-size: 0;
 }
 
 .slot {
   display: none;
-  color: white;
   opacity: 0;
   width: 70px;
   height: 100px;
@@ -59,7 +65,7 @@ main {
 }
 
 .visible {
-  display: inline-block;
+  display: inline-block !important;
 }
 
 #myVideo {
@@ -69,6 +75,10 @@ main {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+#lucky {
+  display: none;
 }
 
 #btn {

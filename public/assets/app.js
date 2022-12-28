@@ -55,6 +55,7 @@ let header = document.querySelector("header");
 let main = document.querySelector("main");
 let mouseLogo = document.querySelector("#mouse_logo");
 let fireworkPlaceholder = [...document.querySelectorAll(".placeholder")];
+let lucky = document.querySelector("#lucky");
 let slots = [...document.querySelectorAll(".slot")];
 let btn = document.querySelector("#btn");
 
@@ -72,6 +73,7 @@ btn.addEventListener("click", () => {
       fireworkPlaceholder.map((item) => item.classList.add("firework"));
     }, 9000);
   } else {
+    lucky.style.display = "block";
     slots.map((slot) => {
       slot.classList.add("visible");
     });
