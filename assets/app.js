@@ -75,7 +75,6 @@ numberInput.addEventListener("submit", (e) => {
 btn.addEventListener("click", () => {
   if (slots[0].classList.contains("visible")) {
     drumRoll.play();
-    lucky.textContent = "The lucky number is...";
     fireworkPlaceholder.map((item) => item.classList.remove("firework"));
     firstNumber = Math.floor(Math.random() * 2 + 1);
     secondNumber = Math.floor(Math.random() * 6);
@@ -87,7 +86,7 @@ btn.addEventListener("click", () => {
 
     setTimeout(() => {
       fireworkPlaceholder.map((item) => item.classList.add("firework"));
-      lucky.textContent = "🥳🎉CONGRATULATIONS🎉🥳";
+      lucky.textContent = "🥳🎉ألف مبارك🎉🥳";
       drumRoll.pause();
       cheer.play();
     }, 8100);

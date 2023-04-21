@@ -57,7 +57,6 @@ footer {
 }
 .organizers > img:nth-child(2) {
   width: 250px;
-  /* height: 250px; */
   object-fit: contain;
 }
 .sponsor_logo {
@@ -69,8 +68,29 @@ footer {
   width: 30px;
 }
 
-.gold {
+.highlight {
   color: #e2bb00;
+}
+
+#number {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#number > input {
+  width: 200px;
+  text-align: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 10px;
+}
+
+#number > input:focus {
+  outline: none;
 }
 
 #mouse_logo {
@@ -125,13 +145,16 @@ footer {
   transition: opacity 1.5s ease-in;
 }
 
-#btn {
-  font-size: 5em;
+.btn {
+  font-size: 3em;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: all 0.5s ease-in;
-  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  color: #e2bb00;
 }
 
 @keyframes slide {
