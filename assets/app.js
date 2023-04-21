@@ -53,13 +53,24 @@ var numberSpin = function (selector) {
 
 let header = document.querySelector("header");
 let main = document.querySelector("main");
-let mouseLogo = document.querySelector("#mouse_logo");
+let numberInput = document.querySelector("#number");
+let scroll1 = document.querySelector("#scroll1");
 let drumRoll = document.querySelector("#drum_roll");
 let cheer = document.querySelector("#cheer");
 let fireworkPlaceholder = [...document.querySelectorAll(".placeholder")];
 let lucky = document.querySelector("#lucky");
 let slots = [...document.querySelectorAll(".slot")];
 let btn = document.querySelector("#btn");
+
+numberInput.addEventListener("submit", (e) => {
+  e.preventDefault();
+  for (let i = 0; i < 11; i++) {
+    let myDiv = document.createElement("div");
+    myDiv.innerText = i % (parseInt(e.target.number.value[0]) + 1);
+    scroll1.appendChild(myDiv);
+  }
+  main.scrollIntoView({ behavior: "smooth" });
+});
 
 btn.addEventListener("click", () => {
   if (slots[0].classList.contains("visible")) {
@@ -86,10 +97,6 @@ btn.addEventListener("click", () => {
       slot.classList.add("visible");
     });
   }
-});
-
-mouseLogo.addEventListener("click", () => {
-  main.scrollIntoView({ behavior: "smooth" });
 });
 
 document.addEventListener("wheel", (e) => {
