@@ -79,9 +79,10 @@ btn.addEventListener("click", () => {
     drumRoll.play();
     lucky.textContent = "...الفائز هو";
     fireworkPlaceholder.classList.remove("pyro");
-    let winner = Math.floor(Math.random() * maxNumber);
-    console.log(winner);
-
+    let winner = 0;
+    while (winner === 0) {
+      winner = Math.floor(Math.random() * maxNumber);
+    }
     numberSpin("scroll1").stop(5000, Math.floor(winner / 100));
     numberSpin("scroll2").stop(6000, Math.floor((winner % 100) / 10));
     numberSpin("scroll3").stop(7000, winner % 10);
