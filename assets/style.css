@@ -125,8 +125,7 @@ footer {
   width: 70px;
   height: 100px;
   text-align: center;
-  font-size: 5em;
-  font-family: verdana;
+  font-size: 7em;
   line-height: 100px;
   overflow: hidden;
   transition: opacity 1s ease-in;

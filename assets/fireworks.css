@@ -1,185 +1,514 @@
-@keyframes firework {
-  0% {
-    transform: translate(var(--x), var(--initialY));
-    width: var(--initialSize);
-    opacity: 1;
+.pyro > .before,
+.pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff;
+  -moz-animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -webkit-animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -o-animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  -ms-animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+  animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+}
+
+.pyro > .after {
+  -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+  -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+  -o-animation-delay: 1.25s, 1.25s, 1.25s;
+  -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+  -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+  -o-animation-duration: 1.25s, 1.25s, 6.25s;
+  -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s;
+}
+
+@-webkit-keyframes bang {
+  to {
+    box-shadow: -91px 52.3333333333px hsl(239deg, 100%, 50%),
+      -222px -68.6666666667px hsl(269deg, 100%, 50%),
+      145px -72.6666666667px hsl(283deg, 100%, 50%),
+      80px -265.6666666667px hsl(200deg, 100%, 50%),
+      98px -221.6666666667px hsl(300deg, 100%, 50%),
+      67px 49.3333333333px hsl(256deg, 100%, 50%),
+      108px 63.3333333333px hsl(265deg, 100%, 50%),
+      -62px -348.6666666667px hsl(328deg, 100%, 50%),
+      -7px 74.3333333333px hsl(125deg, 100%, 50%),
+      159px -54.6666666667px hsl(179deg, 100%, 50%),
+      -148px -77.6666666667px hsl(219deg, 100%, 50%),
+      -108px -195.6666666667px hsl(146deg, 100%, 50%),
+      -241px 40.3333333333px hsl(49deg, 100%, 50%),
+      -210px -289.6666666667px hsl(14deg, 100%, 50%),
+      147px -370.6666666667px hsl(127deg, 100%, 50%),
+      38px -395.6666666667px hsl(86deg, 100%, 50%),
+      -146px -297.6666666667px hsl(293deg, 100%, 50%),
+      -72px -332.6666666667px hsl(283deg, 100%, 50%),
+      -182px 62.3333333333px hsl(9deg, 100%, 50%),
+      -202px -193.6666666667px hsl(35deg, 100%, 50%),
+      190px -360.6666666667px hsl(112deg, 100%, 50%),
+      197px -408.6666666667px hsl(65deg, 100%, 50%),
+      158px -336.6666666667px hsl(42deg, 100%, 50%),
+      245px -56.6666666667px hsl(211deg, 100%, 50%),
+      -172px -323.6666666667px hsl(177deg, 100%, 50%),
+      -78px -220.6666666667px hsl(313deg, 100%, 50%),
+      163px -61.6666666667px hsl(178deg, 100%, 50%),
+      60px -296.6666666667px hsl(306deg, 100%, 50%),
+      223px -36.6666666667px hsl(357deg, 100%, 50%),
+      -203px -268.6666666667px hsl(82deg, 100%, 50%),
+      30px -80.6666666667px hsl(33deg, 100%, 50%),
+      -226px -165.6666666667px hsl(13deg, 100%, 50%),
+      -43px -174.6666666667px hsl(194deg, 100%, 50%),
+      152px -82.6666666667px hsl(39deg, 100%, 50%),
+      -247px -237.6666666667px hsl(324deg, 100%, 50%),
+      223px -289.6666666667px hsl(227deg, 100%, 50%),
+      135px -194.6666666667px hsl(273deg, 100%, 50%),
+      167px 29.3333333333px hsl(114deg, 100%, 50%),
+      26px 58.3333333333px hsl(132deg, 100%, 50%),
+      170px -355.6666666667px hsl(353deg, 100%, 50%),
+      31px -98.6666666667px hsl(92deg, 100%, 50%),
+      140px -401.6666666667px hsl(326deg, 100%, 50%),
+      237px -225.6666666667px hsl(231deg, 100%, 50%),
+      159px -233.6666666667px hsl(224deg, 100%, 50%),
+      142px -164.6666666667px hsl(302deg, 100%, 50%),
+      -6px -0.6666666667px hsl(298deg, 100%, 50%),
+      -167px -128.6666666667px hsl(25deg, 100%, 50%),
+      -52px -401.6666666667px hsl(92deg, 100%, 50%),
+      57px 29.3333333333px hsl(270deg, 100%, 50%),
+      92px 7.3333333333px hsl(199deg, 100%, 50%),
+      109px 44.3333333333px hsl(101deg, 100%, 50%);
   }
-  50% {
-    width: 0.5vmin;
-    opacity: 1;
+}
+@-moz-keyframes bang {
+  to {
+    box-shadow: -91px 52.3333333333px hsl(239deg, 100%, 50%),
+      -222px -68.6666666667px hsl(269deg, 100%, 50%),
+      145px -72.6666666667px hsl(283deg, 100%, 50%),
+      80px -265.6666666667px hsl(200deg, 100%, 50%),
+      98px -221.6666666667px hsl(300deg, 100%, 50%),
+      67px 49.3333333333px hsl(256deg, 100%, 50%),
+      108px 63.3333333333px hsl(265deg, 100%, 50%),
+      -62px -348.6666666667px hsl(328deg, 100%, 50%),
+      -7px 74.3333333333px hsl(125deg, 100%, 50%),
+      159px -54.6666666667px hsl(179deg, 100%, 50%),
+      -148px -77.6666666667px hsl(219deg, 100%, 50%),
+      -108px -195.6666666667px hsl(146deg, 100%, 50%),
+      -241px 40.3333333333px hsl(49deg, 100%, 50%),
+      -210px -289.6666666667px hsl(14deg, 100%, 50%),
+      147px -370.6666666667px hsl(127deg, 100%, 50%),
+      38px -395.6666666667px hsl(86deg, 100%, 50%),
+      -146px -297.6666666667px hsl(293deg, 100%, 50%),
+      -72px -332.6666666667px hsl(283deg, 100%, 50%),
+      -182px 62.3333333333px hsl(9deg, 100%, 50%),
+      -202px -193.6666666667px hsl(35deg, 100%, 50%),
+      190px -360.6666666667px hsl(112deg, 100%, 50%),
+      197px -408.6666666667px hsl(65deg, 100%, 50%),
+      158px -336.6666666667px hsl(42deg, 100%, 50%),
+      245px -56.6666666667px hsl(211deg, 100%, 50%),
+      -172px -323.6666666667px hsl(177deg, 100%, 50%),
+      -78px -220.6666666667px hsl(313deg, 100%, 50%),
+      163px -61.6666666667px hsl(178deg, 100%, 50%),
+      60px -296.6666666667px hsl(306deg, 100%, 50%),
+      223px -36.6666666667px hsl(357deg, 100%, 50%),
+      -203px -268.6666666667px hsl(82deg, 100%, 50%),
+      30px -80.6666666667px hsl(33deg, 100%, 50%),
+      -226px -165.6666666667px hsl(13deg, 100%, 50%),
+      -43px -174.6666666667px hsl(194deg, 100%, 50%),
+      152px -82.6666666667px hsl(39deg, 100%, 50%),
+      -247px -237.6666666667px hsl(324deg, 100%, 50%),
+      223px -289.6666666667px hsl(227deg, 100%, 50%),
+      135px -194.6666666667px hsl(273deg, 100%, 50%),
+      167px 29.3333333333px hsl(114deg, 100%, 50%),
+      26px 58.3333333333px hsl(132deg, 100%, 50%),
+      170px -355.6666666667px hsl(353deg, 100%, 50%),
+      31px -98.6666666667px hsl(92deg, 100%, 50%),
+      140px -401.6666666667px hsl(326deg, 100%, 50%),
+      237px -225.6666666667px hsl(231deg, 100%, 50%),
+      159px -233.6666666667px hsl(224deg, 100%, 50%),
+      142px -164.6666666667px hsl(302deg, 100%, 50%),
+      -6px -0.6666666667px hsl(298deg, 100%, 50%),
+      -167px -128.6666666667px hsl(25deg, 100%, 50%),
+      -52px -401.6666666667px hsl(92deg, 100%, 50%),
+      57px 29.3333333333px hsl(270deg, 100%, 50%),
+      92px 7.3333333333px hsl(199deg, 100%, 50%),
+      109px 44.3333333333px hsl(101deg, 100%, 50%);
   }
-  100% {
-    width: var(--finalSize);
+}
+@-o-keyframes bang {
+  to {
+    box-shadow: -91px 52.3333333333px hsl(239deg, 100%, 50%),
+      -222px -68.6666666667px hsl(269deg, 100%, 50%),
+      145px -72.6666666667px hsl(283deg, 100%, 50%),
+      80px -265.6666666667px hsl(200deg, 100%, 50%),
+      98px -221.6666666667px hsl(300deg, 100%, 50%),
+      67px 49.3333333333px hsl(256deg, 100%, 50%),
+      108px 63.3333333333px hsl(265deg, 100%, 50%),
+      -62px -348.6666666667px hsl(328deg, 100%, 50%),
+      -7px 74.3333333333px hsl(125deg, 100%, 50%),
+      159px -54.6666666667px hsl(179deg, 100%, 50%),
+      -148px -77.6666666667px hsl(219deg, 100%, 50%),
+      -108px -195.6666666667px hsl(146deg, 100%, 50%),
+      -241px 40.3333333333px hsl(49deg, 100%, 50%),
+      -210px -289.6666666667px hsl(14deg, 100%, 50%),
+      147px -370.6666666667px hsl(127deg, 100%, 50%),
+      38px -395.6666666667px hsl(86deg, 100%, 50%),
+      -146px -297.6666666667px hsl(293deg, 100%, 50%),
+      -72px -332.6666666667px hsl(283deg, 100%, 50%),
+      -182px 62.3333333333px hsl(9deg, 100%, 50%),
+      -202px -193.6666666667px hsl(35deg, 100%, 50%),
+      190px -360.6666666667px hsl(112deg, 100%, 50%),
+      197px -408.6666666667px hsl(65deg, 100%, 50%),
+      158px -336.6666666667px hsl(42deg, 100%, 50%),
+      245px -56.6666666667px hsl(211deg, 100%, 50%),
+      -172px -323.6666666667px hsl(177deg, 100%, 50%),
+      -78px -220.6666666667px hsl(313deg, 100%, 50%),
+      163px -61.6666666667px hsl(178deg, 100%, 50%),
+      60px -296.6666666667px hsl(306deg, 100%, 50%),
+      223px -36.6666666667px hsl(357deg, 100%, 50%),
+      -203px -268.6666666667px hsl(82deg, 100%, 50%),
+      30px -80.6666666667px hsl(33deg, 100%, 50%),
+      -226px -165.6666666667px hsl(13deg, 100%, 50%),
+      -43px -174.6666666667px hsl(194deg, 100%, 50%),
+      152px -82.6666666667px hsl(39deg, 100%, 50%),
+      -247px -237.6666666667px hsl(324deg, 100%, 50%),
+      223px -289.6666666667px hsl(227deg, 100%, 50%),
+      135px -194.6666666667px hsl(273deg, 100%, 50%),
+      167px 29.3333333333px hsl(114deg, 100%, 50%),
+      26px 58.3333333333px hsl(132deg, 100%, 50%),
+      170px -355.6666666667px hsl(353deg, 100%, 50%),
+      31px -98.6666666667px hsl(92deg, 100%, 50%),
+      140px -401.6666666667px hsl(326deg, 100%, 50%),
+      237px -225.6666666667px hsl(231deg, 100%, 50%),
+      159px -233.6666666667px hsl(224deg, 100%, 50%),
+      142px -164.6666666667px hsl(302deg, 100%, 50%),
+      -6px -0.6666666667px hsl(298deg, 100%, 50%),
+      -167px -128.6666666667px hsl(25deg, 100%, 50%),
+      -52px -401.6666666667px hsl(92deg, 100%, 50%),
+      57px 29.3333333333px hsl(270deg, 100%, 50%),
+      92px 7.3333333333px hsl(199deg, 100%, 50%),
+      109px 44.3333333333px hsl(101deg, 100%, 50%);
+  }
+}
+@-ms-keyframes bang {
+  to {
+    box-shadow: -91px 52.3333333333px hsl(239deg, 100%, 50%),
+      -222px -68.6666666667px hsl(269deg, 100%, 50%),
+      145px -72.6666666667px hsl(283deg, 100%, 50%),
+      80px -265.6666666667px hsl(200deg, 100%, 50%),
+      98px -221.6666666667px hsl(300deg, 100%, 50%),
+      67px 49.3333333333px hsl(256deg, 100%, 50%),
+      108px 63.3333333333px hsl(265deg, 100%, 50%),
+      -62px -348.6666666667px hsl(328deg, 100%, 50%),
+      -7px 74.3333333333px hsl(125deg, 100%, 50%),
+      159px -54.6666666667px hsl(179deg, 100%, 50%),
+      -148px -77.6666666667px hsl(219deg, 100%, 50%),
+      -108px -195.6666666667px hsl(146deg, 100%, 50%),
+      -241px 40.3333333333px hsl(49deg, 100%, 50%),
+      -210px -289.6666666667px hsl(14deg, 100%, 50%),
+      147px -370.6666666667px hsl(127deg, 100%, 50%),
+      38px -395.6666666667px hsl(86deg, 100%, 50%),
+      -146px -297.6666666667px hsl(293deg, 100%, 50%),
+      -72px -332.6666666667px hsl(283deg, 100%, 50%),
+      -182px 62.3333333333px hsl(9deg, 100%, 50%),
+      -202px -193.6666666667px hsl(35deg, 100%, 50%),
+      190px -360.6666666667px hsl(112deg, 100%, 50%),
+      197px -408.6666666667px hsl(65deg, 100%, 50%),
+      158px -336.6666666667px hsl(42deg, 100%, 50%),
+      245px -56.6666666667px hsl(211deg, 100%, 50%),
+      -172px -323.6666666667px hsl(177deg, 100%, 50%),
+      -78px -220.6666666667px hsl(313deg, 100%, 50%),
+      163px -61.6666666667px hsl(178deg, 100%, 50%),
+      60px -296.6666666667px hsl(306deg, 100%, 50%),
+      223px -36.6666666667px hsl(357deg, 100%, 50%),
+      -203px -268.6666666667px hsl(82deg, 100%, 50%),
+      30px -80.6666666667px hsl(33deg, 100%, 50%),
+      -226px -165.6666666667px hsl(13deg, 100%, 50%),
+      -43px -174.6666666667px hsl(194deg, 100%, 50%),
+      152px -82.6666666667px hsl(39deg, 100%, 50%),
+      -247px -237.6666666667px hsl(324deg, 100%, 50%),
+      223px -289.6666666667px hsl(227deg, 100%, 50%),
+      135px -194.6666666667px hsl(273deg, 100%, 50%),
+      167px 29.3333333333px hsl(114deg, 100%, 50%),
+      26px 58.3333333333px hsl(132deg, 100%, 50%),
+      170px -355.6666666667px hsl(353deg, 100%, 50%),
+      31px -98.6666666667px hsl(92deg, 100%, 50%),
+      140px -401.6666666667px hsl(326deg, 100%, 50%),
+      237px -225.6666666667px hsl(231deg, 100%, 50%),
+      159px -233.6666666667px hsl(224deg, 100%, 50%),
+      142px -164.6666666667px hsl(302deg, 100%, 50%),
+      -6px -0.6666666667px hsl(298deg, 100%, 50%),
+      -167px -128.6666666667px hsl(25deg, 100%, 50%),
+      -52px -401.6666666667px hsl(92deg, 100%, 50%),
+      57px 29.3333333333px hsl(270deg, 100%, 50%),
+      92px 7.3333333333px hsl(199deg, 100%, 50%),
+      109px 44.3333333333px hsl(101deg, 100%, 50%);
+  }
+}
+@keyframes bang {
+  to {
+    box-shadow: -91px 52.3333333333px hsl(239deg, 100%, 50%),
+      -222px -68.6666666667px hsl(269deg, 100%, 50%),
+      145px -72.6666666667px hsl(283deg, 100%, 50%),
+      80px -265.6666666667px hsl(200deg, 100%, 50%),
+      98px -221.6666666667px hsl(300deg, 100%, 50%),
+      67px 49.3333333333px hsl(256deg, 100%, 50%),
+      108px 63.3333333333px hsl(265deg, 100%, 50%),
+      -62px -348.6666666667px hsl(328deg, 100%, 50%),
+      -7px 74.3333333333px hsl(125deg, 100%, 50%),
+      159px -54.6666666667px hsl(179deg, 100%, 50%),
+      -148px -77.6666666667px hsl(219deg, 100%, 50%),
+      -108px -195.6666666667px hsl(146deg, 100%, 50%),
+      -241px 40.3333333333px hsl(49deg, 100%, 50%),
+      -210px -289.6666666667px hsl(14deg, 100%, 50%),
+      147px -370.6666666667px hsl(127deg, 100%, 50%),
+      38px -395.6666666667px hsl(86deg, 100%, 50%),
+      -146px -297.6666666667px hsl(293deg, 100%, 50%),
+      -72px -332.6666666667px hsl(283deg, 100%, 50%),
+      -182px 62.3333333333px hsl(9deg, 100%, 50%),
+      -202px -193.6666666667px hsl(35deg, 100%, 50%),
+      190px -360.6666666667px hsl(112deg, 100%, 50%),
+      197px -408.6666666667px hsl(65deg, 100%, 50%),
+      158px -336.6666666667px hsl(42deg, 100%, 50%),
+      245px -56.6666666667px hsl(211deg, 100%, 50%),
+      -172px -323.6666666667px hsl(177deg, 100%, 50%),
+      -78px -220.6666666667px hsl(313deg, 100%, 50%),
+      163px -61.6666666667px hsl(178deg, 100%, 50%),
+      60px -296.6666666667px hsl(306deg, 100%, 50%),
+      223px -36.6666666667px hsl(357deg, 100%, 50%),
+      -203px -268.6666666667px hsl(82deg, 100%, 50%),
+      30px -80.6666666667px hsl(33deg, 100%, 50%),
+      -226px -165.6666666667px hsl(13deg, 100%, 50%),
+      -43px -174.6666666667px hsl(194deg, 100%, 50%),
+      152px -82.6666666667px hsl(39deg, 100%, 50%),
+      -247px -237.6666666667px hsl(324deg, 100%, 50%),
+      223px -289.6666666667px hsl(227deg, 100%, 50%),
+      135px -194.6666666667px hsl(273deg, 100%, 50%),
+      167px 29.3333333333px hsl(114deg, 100%, 50%),
+      26px 58.3333333333px hsl(132deg, 100%, 50%),
+      170px -355.6666666667px hsl(353deg, 100%, 50%),
+      31px -98.6666666667px hsl(92deg, 100%, 50%),
+      140px -401.6666666667px hsl(326deg, 100%, 50%),
+      237px -225.6666666667px hsl(231deg, 100%, 50%),
+      159px -233.6666666667px hsl(224deg, 100%, 50%),
+      142px -164.6666666667px hsl(302deg, 100%, 50%),
+      -6px -0.6666666667px hsl(298deg, 100%, 50%),
+      -167px -128.6666666667px hsl(25deg, 100%, 50%),
+      -52px -401.6666666667px hsl(92deg, 100%, 50%),
+      57px 29.3333333333px hsl(270deg, 100%, 50%),
+      92px 7.3333333333px hsl(199deg, 100%, 50%),
+      109px 44.3333333333px hsl(101deg, 100%, 50%);
+  }
+}
+@-webkit-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
     opacity: 0;
   }
 }
-
-/* @keyframes fireworkPseudo {
-    0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
-    50% { width: 0.5vmin; opacity: 1; }
-    100% { width: var(--finalSize); opacity: 0; }
+@-moz-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0;
   }
-   */
-.firework,
-.firework::before,
-.firework::after {
-  --initialSize: 0.5vmin;
-  --finalSize: 100vmin;
-  --particleSize: 0.2vmin;
-  --color1: yellow;
-  --color2: khaki;
-  --color3: white;
-  --color4: lime;
-  --color5: gold;
-  --color6: mediumseagreen;
-  --y: -30vmin;
-  --x: -50%;
-  --initialY: 60vmin;
-  content: "";
-  animation: firework 2s infinite;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, var(--y));
-  width: var(--initialSize);
-  aspect-ratio: 1;
-  background: 
-      /*
-      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
-      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
-      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
-      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
-      */ radial-gradient(
-        circle,
-        var(--color1) var(--particleSize),
-        #0000 0
-      )
-      50% 0%,
-    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
-    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
-    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
-    /* bottom right */
-      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80%
-      90%,
-    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
-    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
-    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
-    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
-    /* bottom left */
-      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22%
-      90%,
-    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
-    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
-    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
-    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
-    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
-    /* top left */
-      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80%
-      10%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
-    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
-    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
-    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
-    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
-    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
-    /* top right */
-      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22%
-      14%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;
-  background-size: var(--initialSize) var(--initialSize);
-  background-repeat: no-repeat;
+}
+@-o-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0;
+  }
+}
+@-ms-keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0;
+  }
+}
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+@-moz-keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+@-o-keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+@-ms-keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+@keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+.fadeOut {
+  animation: 3s fadeOut;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
-.firework::before {
-  --x: -50%;
-  --y: -50%;
-  --initialY: -50%;
-  /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
-  transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
-  /*   animation: fireworkPseudo 2s infinite; */
-}
-
-.firework::after {
-  --x: -50%;
-  --y: -50%;
-  --initialY: -50%;
-  /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
-  transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
-  /*   animation: fireworkPseudo 2s infinite; */
-}
-
-.firework:nth-child(2) {
-  --x: 30vmin;
-}
-
-.firework:nth-child(2),
-.firework:nth-child(2)::before,
-.firework:nth-child(2)::after {
-  --color1: pink;
-  --color2: violet;
-  --color3: fuchsia;
-  --color4: orchid;
-  --color5: plum;
-  --color6: lavender;
-  --finalSize: 100vmin;
-  left: 40%;
-  top: 50%;
-  animation-delay: -0.25s;
-}
-
-.firework:nth-child(3) {
-  --x: -30vmin;
-  --y: -50vmin;
-}
-
-.firework:nth-child(3),
-.firework:nth-child(3)::before,
-.firework:nth-child(3)::after {
-  --color1: cyan;
-  --color2: lightcyan;
-  --color3: lightblue;
-  --color4: PaleTurquoise;
-  --color5: SkyBlue;
-  --color6: lavender;
-  --finalSize: 100vmin;
-  left: 60%;
-  top: 50%;
-  animation-delay: -0.4s;
-}
-
-.firework:nth-child(4),
-.firework:nth-child(4)::before,
-.firework:nth-child(4)::after {
-  --color1: cyan;
-  --color2: lightcyan;
-  --color3: lightblue;
-  --color4: PaleTurquoise;
-  --color5: SkyBlue;
-  --color6: lavender;
-  --finalSize: 100vmin;
-  left: 80%;
-  top: 50%;
-  animation-delay: -0.4s;
-}
-
-.firework:nth-child(5),
-.firework:nth-child(5)::before,
-.firework:nth-child(5)::after {
-  --color1: cyan;
-  --color2: lightcyan;
-  --color3: lightblue;
-  --color4: PaleTurquoise;
-  --color5: SkyBlue;
-  --color6: lavender;
-  --finalSize: 100vmin;
-  left: 20%;
-  top: 50%;
-  animation-delay: -0.4s;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
 }

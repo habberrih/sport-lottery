@@ -57,16 +57,18 @@ let numberInput = document.querySelector("#number");
 let scroll1 = document.querySelector("#scroll1");
 let drumRoll = document.querySelector("#drum_roll");
 let cheer = document.querySelector("#cheer");
-let fireworkPlaceholder = [...document.querySelectorAll(".placeholder")];
+let fireworkPlaceholder = document.querySelector(".placeholder");
 let lucky = document.querySelector("#lucky");
 let slots = [...document.querySelectorAll(".slot")];
-let btn = document.querySelector("#btn");
+let btn = document.querySelectorAll(".btn")[1];
+let maxNumber = 0;
 
 numberInput.addEventListener("submit", (e) => {
   e.preventDefault();
+  maxNumber = parseInt(e.target.number.value);
   for (let i = 0; i < 11; i++) {
     let myDiv = document.createElement("div");
-    myDiv.innerText = i % (parseInt(e.target.number.value[0]) + 1);
+    myDiv.innerText = i % (e.target.number.value[0] + 1);
     scroll1.appendChild(myDiv);
   }
   main.scrollIntoView({ behavior: "smooth" });
@@ -75,17 +77,17 @@ numberInput.addEventListener("submit", (e) => {
 btn.addEventListener("click", () => {
   if (slots[0].classList.contains("visible")) {
     drumRoll.play();
-    fireworkPlaceholder.map((item) => item.classList.remove("firework"));
-    firstNumber = Math.floor(Math.random() * 2 + 1);
-    secondNumber = Math.floor(Math.random() * 6);
-    thirdNumber = Math.floor(Math.random() * 10);
+    lucky.textContent = "...الفائز هو";
+    fireworkPlaceholder.classList.remove("pyro");
+    let winner = Math.floor(Math.random() * maxNumber);
+    console.log(winner);
 
-    numberSpin("scroll1").stop(5000, firstNumber);
-    numberSpin("scroll2").stop(6000, secondNumber);
-    numberSpin("scroll3").stop(7000, thirdNumber);
+    numberSpin("scroll1").stop(5000, Math.floor(winner / 100));
+    numberSpin("scroll2").stop(6000, Math.floor((winner % 100) / 10));
+    numberSpin("scroll3").stop(7000, winner % 10);
 
     setTimeout(() => {
-      fireworkPlaceholder.map((item) => item.classList.add("firework"));
+      fireworkPlaceholder.classList.add("pyro");
       lucky.textContent = "🥳🎉ألف مبارك🎉🥳";
       drumRoll.pause();
       cheer.play();
