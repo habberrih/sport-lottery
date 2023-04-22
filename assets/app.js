@@ -1,3 +1,11 @@
+function rand(min, max) {
+  return (
+    (Math.floor(Math.pow(10, 14) * Math.random() * Math.random()) %
+      (max - min + 1)) +
+    min
+  );
+}
+
 var numberSpin = function (selector) {
   var element = document.getElementById(selector);
   var factor = 10 + Math.floor(Math.random() * 10);
@@ -61,16 +69,13 @@ let fireworkPlaceholder = document.querySelector(".placeholder");
 let lucky = document.querySelector("#lucky");
 let slots = [...document.querySelectorAll(".slot")];
 let btn = document.querySelectorAll(".btn")[1];
-let maxNumber = 0;
+let min = 0;
+let max = 0;
 
 numberInput.addEventListener("submit", (e) => {
   e.preventDefault();
-  maxNumber = parseInt(e.target.number.value);
-  for (let i = 0; i < 11; i++) {
-    let myDiv = document.createElement("div");
-    myDiv.innerText = i % (e.target.number.value[0] + 1);
-    scroll1.appendChild(myDiv);
-  }
+  min = parseInt(e.target.min.value);
+  max = parseInt(e.target.max.value);
   main.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -81,7 +86,7 @@ btn.addEventListener("click", () => {
     fireworkPlaceholder.classList.remove("pyro");
     let winner = 0;
     while (winner === 0) {
-      winner = Math.floor(Math.random() * maxNumber);
+      winner = rand(min, max);
     }
     numberSpin("scroll1").stop(5000, Math.floor(winner / 100));
     numberSpin("scroll2").stop(6000, Math.floor((winner % 100) / 10));
