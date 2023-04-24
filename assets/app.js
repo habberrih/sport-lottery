@@ -98,7 +98,7 @@ btn.addEventListener("click", () => {
       lucky.textContent = "🥳🎉ألف مبارك🎉🥳";
       drumRoll.pause();
       cheer.play();
-    }, 9100);
+    }, 9500);
   } else {
     lucky.style.opacity = 1;
     slots.map((slot) => {
